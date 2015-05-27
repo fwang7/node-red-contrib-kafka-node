@@ -1,0 +1,91 @@
+<script type="text/javascript">
+    RED.nodes.registerType('kafka',{
+        category: 'function',
+        color: '#FFFFFF',
+        defaults: {
+            zkquorum:{value:"", required: true},
+            topics: {value:"", required: true}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "kafka.png",
+        align: "right",
+        label: function() {
+            return this.name||"kafka";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="kafka">
+    <div class="form-row">
+        <label for="node-input-zkquorum"><i class="icon-tag"></i>ZK Quorum</label>
+        <input type="text" id="node-input-zkquorum" placeholder="ZK Quorum">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-topics"><i class="icon-tag"></i>Topic(s)</label>
+        <input type="text" id="node-input-topics" placeholder="Topics">
+    </div>
+
+
+</script>
+
+<script type="text/x-red" data-help-name="kafka">
+    <p>A simple Kafka producer node.</p>
+    <p><b>ZooKeeper Quorum</b>  <i>The ZooKeeper quorum of Kafka cluster.</i></p>
+    <p><b>Topic(s)</b> <i>The topic(s) of message to produce.</i></p>
+    <pre>
+Example:
+Topic(s) = "topic"
+OR
+Topic(s) = "topic1, topic2, topic3"
+    </pre>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('kafka in',{
+        category: 'function',
+        color: '#FFFFFF',
+        defaults: {
+            zkquorum:{value:"", required: true},
+            topics: {value:"", required: true},
+            groupId:{value:"", required: true}
+        },
+        inputs:0,
+        outputs:1,
+        icon: "kafka.png",
+        label: function() {
+            return this.name||"kafka";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="kafka in">
+    <div class="form-row">
+        <label for="node-input-zkquorum"><i class="icon-tag"></i>ZK Quorum</label>
+        <input type="text" id="node-input-zkquorum" placeholder="ZK Quorum">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-topics"><i class="icon-tag"></i>Topic(s)</label>
+        <input type="text" id="node-input-topics" placeholder="Topic">
+    </div>
+
+      <div class="form-row">
+        <label for="node-input-groupId"><i class="icon-tag"></i>GroupId</label>
+        <input type="text" id="node-input-groupId" placeholder="GroupId">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="kafka in">
+    <p>A simple Kafka consumer node.</p>
+    <p><b>ZooKeeper Quorum</b>  <i>The ZooKeeper quorum of Kafka cluster.</i></p>
+    <p><b>GroupId</b> <i>The groupId of consumers.</i></p>
+    <p><b>Topic(s)</b> <i>The topic(s) of message to produce.</i></p>
+    <pre>
+Example:
+Topic(s) = "topic"
+OR
+Topic(s) = "topic1, topic2, topic3"
+    </pre>
+</script>
