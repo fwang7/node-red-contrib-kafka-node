@@ -3,7 +3,7 @@
     "version"      : "0.1.0",
     "description"  : "Node-RED nodes of HighLevel Kafka Producer and Consumer",
     "dependencies" : {
-        "kafka-node": "0.2.24",
+        "kafka-node": "0.2.24"
     },
     "repository" : {
         "type" : "git",
@@ -19,6 +19,6 @@
     "author" : {
         "name" : "Feng Wang",
         "email": "fwang1@us.ibm.com"
-    },
+    }
 }
 
