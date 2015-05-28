@@ -1,5 +1,5 @@
 # Kafka Node
-Kafka node can produce/consume the mesasges to/from kafka cluster along with topic(s) on [NodeRED].
+Kafka node can produce/consume the mesasges to/from kafka cluster along with topic(s) on [NodeRED](http://nodered.org/docs).
 
 
 ## Install
@@ -25,6 +25,7 @@ npm install -g node-red-contrib-kafka-node
  - ZkQuarum - <i>The ZooKeeper quorum of Kafka cluster.
  - Topics - <i>The topic(s) of message to produce.
  - GroupId - <i> The group ID.
+ 
 > Group ID is a string that uniquely identifies the group of consumer processes to which this consumer belongs. By setting the same group id multiple processes indicate that they are all part of the same consumer group.
 
 

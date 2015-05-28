@@ -10,7 +10,7 @@
         "url"  : "https://github.com/fwang7/node-red-contrib-kafka-node.git"
     },
     "license"  : "Apache",
-    "keywords" : [ "node-red", "kafka", "kafka producer", "kafka consumer" ],
+    "keywords" : [ "node-red", "kafka", "kafka producer", "kafka consumer","nodered", "nodered kafka" ],
     "node-red" : {
         "nodes" : {
             "kafka" : "kafka.js"
