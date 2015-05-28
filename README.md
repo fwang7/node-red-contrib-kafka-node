@@ -2,19 +2,19 @@
 Kafka node can produce/consume the mesasges to/from kafka cluster along with topic(s) on [NodeRED].
 
 
-# Install
+## Install
 
 Install from [npm](http://npmjs.org)
 ```
 npm install -g node-red-contrib-kafka-node
 ```
 
-# Prerequisites
+## Prerequisites
  * Node-RED platform. (see [Node-RED](http://nodered.org/docs/getting-started/installation.html))
  * Kafka cluster (see [Kafka](http://kafka.apache.org/documentation.html#gettingStarted)). 
  * Some topics (see [How to create a topic](http://kafka.apache.org/documentation.html#quickstart))
 
-# Usage
+## Usage
 ##### Producer Node
 ###### Parameters:
  - ZkQuarum - <i>The ZooKeeper quorum of Kafka cluster.
@@ -28,14 +28,14 @@ npm install -g node-red-contrib-kafka-node
 > Group ID is a string that uniquely identifies the group of consumer processes to which this consumer belongs. By setting the same group id multiple processes indicate that they are all part of the same consumer group.
 
 
-# Version
-0.1.2
+## Version
+0.1.4
 
-# Tech
+## Tech
  * [Kafka](http://kafka.apache.org/) - Apache Kafka is publish-subscribe messaging rethought as a distributed commit log.
  * [Zookeeper](https://zookeeper.apache.org/) - ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
  * [Kafka-Node](https://www.npmjs.com/package/kafka-node) - Kafka-node is a Node.js client with Zookeeper integration for Apache Kafka 0.8.1 and later. 
 
 
-# Authors
+## Authors
 * Feng Wang - [fwang1@us.ibm.com](mailto:fwang1@us.ibm.com)
