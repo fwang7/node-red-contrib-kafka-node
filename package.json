@@ -1,6 +1,6 @@
 {
     "name"         : "node-red-contrib-kafka-node",
-    "version"      : "0.1.1",
+    "version"      : "0.1.2",
     "description"  : "Node-RED nodes of HighLevel Kafka Producer and Consumer",
     "dependencies" : {
         "kafka-node": "0.2.24"
