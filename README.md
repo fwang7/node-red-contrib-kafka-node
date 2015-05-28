@@ -1,5 +1,5 @@
 # Kafka Node
-Kafka node can produce/consume the mesasges to/from kafka cluster along with topic(s) on [NodeRED].
+Kafka node can produce/consume the mesasges to/from kafka cluster along with topic(s) on [NodeRED](http://nodered.org).
 
 
 ## Install
@@ -35,7 +35,7 @@ npm install -g node-red-contrib-kafka-node
 
 
 ## Version
-0.1.4
+0.1.5
 
 ## Tech
  * [Kafka](http://kafka.apache.org/) - Apache Kafka is publish-subscribe messaging rethought as a distributed commit log.
