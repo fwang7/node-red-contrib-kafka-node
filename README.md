@@ -16,11 +16,17 @@ npm install -g node-red-contrib-kafka-node
 
 ## Usage
 ##### Producer Node
+
+![Alt text](https://github.com/fwang7/node-red-contrib-kafka-node/blob/screenshot/imgs/producer.jpg?raw=true "Producer Example")
+
 ###### Parameters:
  - ZkQuarum - <i>The ZooKeeper quorum of Kafka cluster.
  - Topics - <i>The topic(s) of message to produce.
 
 ##### Consumer Node
+
+![Alt text](https://github.com/fwang7/node-red-contrib-kafka-node/blob/screenshot/imgs/consumer.jpg?raw=true "Consumer Example")
+
 ###### Parameters:
  - ZkQuarum - <i>The ZooKeeper quorum of Kafka cluster.
  - Topics - <i>The topic(s) of message to produce.
