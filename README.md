@@ -16,12 +16,12 @@ npm install -g node-red-contrib-kafka-node
 
 # Usage
 ##### Producer Node
-######Parameters:
+###### Parameters:
  - ZkQuarum - <i>The ZooKeeper quorum of Kafka cluster.
  - Topics - <i>The topic(s) of message to produce.
 
 ##### Consumer Node
-######Parameters:
+###### Parameters:
  - ZkQuarum - <i>The ZooKeeper quorum of Kafka cluster.
  - Topics - <i>The topic(s) of message to produce.
  - GroupId - <i> The group ID.
