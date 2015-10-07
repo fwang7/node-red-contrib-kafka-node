@@ -10,8 +10,8 @@ module.exports = function(RED) {
      */
     function kafkaNode(config) {
         RED.nodes.createNode(this,config);
-        this.topic = config.topic;
-        this.clusterZookeeper = config.zkquorum;
+        var topic = config.topic;
+        var clusterZookeeper = config.zkquorum;
         var node = this;
         var kafka = require('kafka-node');
         var HighLevelProducer = kafka.HighLevelProducer;
