@@ -77,7 +77,7 @@ module.exports = function(RED) {
         // check if multiple topics
         if (topics.indexOf(",") > -1){
             var topicArry = topics.split(',');
-            console.log(topicArry)
+            console.log(topicArry);
             console.log(topicArry.length);
 
 
@@ -93,7 +93,7 @@ module.exports = function(RED) {
 
         var options = {
             groupId: groupId,
-            autoCommit: false,
+            autoCommit: config.autoCommit,
             autoCommitMsgCount: 10
         };
 
@@ -121,4 +121,4 @@ module.exports = function(RED) {
     }
 
     RED.nodes.registerType("kafka in", kafkaInNode);
-}
+};

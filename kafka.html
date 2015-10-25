@@ -49,7 +49,8 @@ Topic(s) = "topic1, topic2, topic3"
         defaults: {
             zkquorum:{value:"", required: true},
             topics: {value:"", required: true},
-            groupId:{value:"", required: true}
+            groupId:{value:"", required: true},
+            autoCommit:{value:true, required: true}
         },
         inputs:0,
         outputs:1,
@@ -75,6 +76,11 @@ Topic(s) = "topic1, topic2, topic3"
         <label for="node-input-groupId"><i class="icon-tag"></i>GroupId</label>
         <input type="text" id="node-input-groupId" placeholder="GroupId">
     </div>
+
+      <div class="form-row">
+        <label for="node-input-autoCommit"><i class="icon-tag"></i>Auto Commit</label>
+        <input type="checkbox" id="node-input-autoCommit"  style="display: inline-block; width: auto; vertical-align: top;" placeholder="Auto Commit">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="kafka in">
@@ -82,6 +88,7 @@ Topic(s) = "topic1, topic2, topic3"
     <p><b>ZooKeeper Quorum</b>  <i>The ZooKeeper quorum of Kafka cluster.</i></p>
     <p><b>GroupId</b> <i>The groupId of consumers.</i></p>
     <p><b>Topic(s)</b> <i>The topic(s) of message to produce.</i></p>
+    <p><b>Auto Commit</b> <i>Messages are committed automatically.</i></p>
     <pre>
 Example:
 Topic(s) = "topic"
