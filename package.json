@@ -3,7 +3,7 @@
     "version"      : "0.1.6",
     "description"  : "Node-RED nodes of HighLevel Kafka Producer and Consumer",
     "dependencies" : {
-        "kafka-node": "0.2.24"
+        "kafka-node": ">=0.3.2"
     },
     "repository" : {
         "type" : "git",
