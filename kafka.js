@@ -12,6 +12,7 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var topic = config.topic;
         var clusterZookeeper = config.zkquorum;
+        var debug = (config.debug == "debug");
         var node = this;
         var kafka = require('kafka-node');
         var HighLevelProducer = kafka.HighLevelProducer;
@@ -47,6 +48,7 @@ module.exports = function(RED) {
             node.error(e);
         }
         var producer = new HighLevelProducer(client);
+        this.status({fill:"green",shape:"dot",text:"connected to "+clusterZookeeper});
     }
 
     RED.nodes.registerType("kafka",kafkaNode);
@@ -70,6 +72,7 @@ module.exports = function(RED) {
         var topics = String(config.topics);
         var clusterZookeeper = config.zkquorum;
         var groupId = config.groupId;
+        var debug = (config.debug == "debug");
         var client = new Client(clusterZookeeper);
 
         var topicJSONArry = [];
@@ -77,12 +80,15 @@ module.exports = function(RED) {
         // check if multiple topics
         if (topics.indexOf(",") > -1){
             var topicArry = topics.split(',');
-            console.log(topicArry);
-            console.log(topicArry.length);
-
+            if (debug) {
+                console.log(topicArry)
+                console.log(topicArry.length);
+            }
 
             for (i = 0; i < topicArry.length; i++) {
-                console.log(topicArry[i]);
+                if (debug) {
+                    console.log(topicArry[i]);
+                }
                 topicJSONArry.push({topic: topicArry[i]});
             }
             topics = topicJSONArry;
@@ -101,10 +107,13 @@ module.exports = function(RED) {
         try {
             var consumer = new HighLevelConsumer(client, topics, options);
             this.log("Consumer created...");
+            this.status({fill:"green",shape:"dot",text:"connected to "+clusterZookeeper});
 
             consumer.on('message', function (message) {
-                console.log(message);
-                node.log(message);
+                if (debug) {
+                    console.log(message);
+                    node.log(message);
+                }
                 var msg = {payload: message};
                 node.send(msg);
             });
