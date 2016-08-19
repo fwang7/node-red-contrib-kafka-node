@@ -44,4 +44,4 @@ npm install -g node-red-contrib-kafka-node
 
 
 ## Authors
-* Feng Wang - [fwang1@us.ibm.com](mailto:fwang1@us.ibm.com)
+* Feng Wang - [desperado.wf@gmail.com](mailto:desperado.wf@gmail.com)
