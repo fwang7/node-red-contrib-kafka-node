@@ -1,10 +1,11 @@
 <script type="text/javascript">
     RED.nodes.registerType('kafka',{
-        category: 'function',
+        category: 'output',
         color: '#FFFFFF',
         defaults: {
             zkquorum:{value:"", required: true},
-            topics: {value:"", required: true}
+            topics: {value:"", required: true},
+            debug: {value:""}
         },
         inputs:1,
         outputs:0,
@@ -27,6 +28,10 @@
         <input type="text" id="node-input-topics" placeholder="Topics">
     </div>
 
+    <div class="form-row">
+        <label for="node-input-debug"><i class="icon-tag"></i>Debug</label>
+        <input type="checkbox" id="node-input-debug" style="display: inline-block; width: auto; vertical-align: top;" value="debug">
+    </div>
 
 </script>
 
@@ -34,6 +39,7 @@
     <p>A simple Kafka producer node.</p>
     <p><b>ZooKeeper Quorum</b>  <i>The ZooKeeper quorum of Kafka cluster.</i></p>
     <p><b>Topic(s)</b> <i>The topic(s) of message to produce.</i></p>
+    <p>Check <b>Debug</b> <i> to print extra information to console.</i></p>
     <pre>
 Example:
 Topic(s) = "topic"
@@ -44,12 +50,13 @@ Topic(s) = "topic1, topic2, topic3"
 
 <script type="text/javascript">
     RED.nodes.registerType('kafka in',{
-        category: 'function',
+        category: 'input',
         color: '#FFFFFF',
         defaults: {
             zkquorum:{value:"", required: true},
             topics: {value:"", required: true},
             groupId:{value:"", required: true},
+            debug: {value:""},
             autoCommit:{value:true, required: true}
         },
         inputs:0,
@@ -76,10 +83,13 @@ Topic(s) = "topic1, topic2, topic3"
         <label for="node-input-groupId"><i class="icon-tag"></i>GroupId</label>
         <input type="text" id="node-input-groupId" placeholder="GroupId">
     </div>
-
       <div class="form-row">
         <label for="node-input-autoCommit"><i class="icon-tag"></i>Auto Commit</label>
         <input type="checkbox" id="node-input-autoCommit"  style="display: inline-block; width: auto; vertical-align: top;" placeholder="Auto Commit">
+    </div>
+    <div class="form-row">
+        <label for="node-input-debug"><i class="icon-tag"></i>Debug</label>
+        <input type="checkbox" id="node-input-debug" style="display: inline-block; width: auto; vertical-align: top;" value="debug">
     </div>
 </script>
 
@@ -89,6 +99,7 @@ Topic(s) = "topic1, topic2, topic3"
     <p><b>GroupId</b> <i>The groupId of consumers.</i></p>
     <p><b>Topic(s)</b> <i>The topic(s) of message to produce.</i></p>
     <p><b>Auto Commit</b> <i>Messages are committed automatically.</i></p>
+    <p>Check <b>Debug</b> <i> to print extra information to console.</i></p>
     <pre>
 Example:
 Topic(s) = "topic"
